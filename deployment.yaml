@@ -1,0 +1,14 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-server
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+        - name: darkhttpd
+          image: docker.io/alpinelinux/darkhttpd
+          ports:
+            - name: http
+              containerPort: 8080

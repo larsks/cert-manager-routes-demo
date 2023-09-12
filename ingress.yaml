@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: demo-server
+  annotations:
+    cert-manager.io/issuer: demo-issuer
+spec:
+  tls:
+  - hosts:
+      - demo-server.shift.oddbit.com
+    secretName: demo-server-certificate
+  rules:
+  - host: demo-server.shift.oddbit.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: demo-server
+            port:
+              name: http
+        path: /
+        pathType: Prefix
