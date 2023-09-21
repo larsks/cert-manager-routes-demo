@@ -3,6 +3,7 @@
 This repository demonstrates how to use [cert-manager] to automatically provision [LetsEncrypt] certificates for secure Routes.
 
 [cert-manager]: https://cert-manager.io/
+[letsencrypt]: https://letsencrypt.org/
 
 ## Overview
 
